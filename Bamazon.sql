@@ -40,7 +40,7 @@ INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity)
 INSERT INTO Product (ItemID, ProductName, DepartmentName, Price, StockQuantity) VALUES (
 90210,
 'Apple Magic Mouse',
-'Electronics'
+'Electronics',
 39.99,
 35);
 
@@ -123,6 +123,87 @@ INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity)
 
 INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity) VALUES (
 60001,
+'Persol Sunglasses',
+'Mens Accessories',
+165.99,
+8);
+
+USE Bamazon;
+CREATE TABLE Departments (
+DepartmentId INT AUTO_INCREMENT,
+PRIMARY KEY(DepartmentId),
+DepartmentName varchar(50) NOT NULL,
+OverheadCosts DECIMAL(11,2) NOT NULL,
+TotalSales DECIMAL(11,2) NOT NULL);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Mens Accessories',
+2000,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Electronics',
+1250,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Shoes',
+1750,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Cologne',
+1500,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Clothing',
+1250,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Automobiles',
+5000,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Womens Clothing',
+1250,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Baggage',
+1000,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Electronic Accessories',
+1300,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Media',
+600,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Cameras & Lenses',
+1800,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Mens Clothing',
+1100,
+0);
+
+INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
+'Mens Accessories',
+900,
+0);
+
+SHOW TABLES;
+CREATE VIEW bamazon.TotalProfits AS SELECT DepartmentId, DepartmentName, OverheadCosts, TotalSales, TotalSales-OverheadCosts AS TotalProfit FROM Departments;
+
 
 
 
