@@ -1,12 +1,14 @@
+DROP DATABASE IF EXISTS Bamazon;
+
 CREATE DATABASE Bamazon;
 
 USE Bamazon;
 
 CREATE TABLE Products (
-ItemID INT NOT NULL AUTO_INCREMENT,
+ItemID INT NOT NULL AUTO_INCREMENT primary key NOT NULL,
 ProductName varchar(50) NOT NULL,
 DepartmentName varchar(50) NOT NULL,
-Price DECIMAL(5,2) NOT NULL,
+Price DECIMAL(6,2) NOT NULL,
 StockQuantity int NOT NULL);
 
 INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity) VALUES (
@@ -129,6 +131,7 @@ INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity)
 8);
 
 USE Bamazon;
+
 CREATE TABLE Departments (
 DepartmentId INT AUTO_INCREMENT,
 PRIMARY KEY(DepartmentId),

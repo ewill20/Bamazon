@@ -1,8 +1,10 @@
 var mysql = require("mysql");
 var prompt = require("prompt");
+var colors = ('colors/safe');
 var table = ("cli-tables");
 var connection = mysql.createConnection({
     host: 'localhost',
+    port: 8080,
     user: 'root',
     password: '',
     database: 'Bamazon',

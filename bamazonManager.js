@@ -1,11 +1,13 @@
 var mysql = require("mysql");
 var prompt = require("prompt");
 var table = ("cli-tables");
+var colors = ('colors/safe');
 var connection = mysql.createConnection({
     host: 'localhost',
+    port: 8080,
     user: 'root',
     password: '',
-    database: 'Bamazon',
+    database: 'Bamazon'
 });
 
 var inventoryUpdate = [];
