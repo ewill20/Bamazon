@@ -1,10 +1,10 @@
 var mysql = require("mysql");
 var prompt = require("prompt");
-var colors = ('colors/safe');
-var table = ("cli-tables");
+var colors = ('colors');
+var Table = ('cli-table');
 var connection = mysql.createConnection({
     host: 'localhost',
-    port: 8080,
+    
     user: 'root',
     password: '',
     database: 'Bamazon',
@@ -17,7 +17,7 @@ connection.connect();
 var options = {
     properties: {
         eOptions: {
-            description: colors.blue('Key in one of the following options: 1) View Product Sales by Department 2) Create New Department')
+            description: ('Key in one of the following options: 1) View Product Sales by Department 2) Create New Department')
         },
     },
 };
@@ -28,9 +28,9 @@ prompt.start();
     prompt.get(options, function(err, res) {
 
     // This dictates what should be done based on user input //
-    if(res.options === 1) {
+    if(res.eOptions == 1) {
         viewProductSales();
-    } else if(res.eOptions === 2) {
+    } else if(res.eOptions == 2) {
         createDepartment();
     } else {
         console.log("You picked an invalid option!");
@@ -42,7 +42,7 @@ prompt.start();
 var viewProductSales = function() {
 
     // Creates a table for the data to be stored and displayed via Node //
-    var Table = new table ({
+    var table = new Table ({
         head: ['Department ID', 'Department Name', 'Overhead Cost', 'Total Sales', 'Total Profit'],
         style: {
             head: ['blue'],
@@ -73,9 +73,9 @@ var createDepartment = function() {
     // Creates the questions to be prompted when option 2 is selected - total sales is calculated based on sales the user can disregard this as well //
     var newDepartment = {
         properties: {
-            newDepartmentName: { description: colors.orange("Please enter the name of the department you would like to add.")
+            newDepartmentName: { description: ("Please enter the name of the department you would like to add.")
             },
-            newOverhead: { description: colors.orange("What are the overhead costs for this department?")
+            newOverhead: { description: ("What are the overhead costs for this department?")
             },
         }
     }

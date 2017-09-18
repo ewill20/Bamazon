@@ -1,10 +1,10 @@
-var mysql = require("mysql");
-var prompt = require("prompt");
-var table = ("cli-tables");
-var colors = ('colors/safe');
+var mysql = require('mysql');
+var prompt = require('prompt');
+var table = ('cli-table');
+var colors = ('colors');
 var connection = mysql.createConnection({
     host: 'localhost',
-    port: 8080,
+    
     user: 'root',
     password: '',
     database: 'Bamazon'
@@ -18,7 +18,7 @@ connection.connect();
 var managerOptions = {
     properties: {
         mgrOptions: {
-            description: colors.blue("Key in one of the following options: 1) View Products For Sale 2) View Low Inventory 3) Add Inventory 4) Add New Product")
+            description: ("Key in one of the following options: 1) View Products For Sale 2) View Low Inventory 3) Add Inventory 4) Add New Product")
         },
     },
 };
@@ -26,13 +26,13 @@ var managerOptions = {
 prompt.start();
 
 prompt.get(mgrOptions, function(err, res) {
-    if(res.mgrOptions === 1) {
+    if(res.mgrOptions == 1) {
         viewProducts();
-    } else if(res.mgrOptions === 2) {
+    } else if(res.mgrOptions == 2) {
         viewInventory();
-    } else if(res.mgrOptions === 3) {
+    } else if(res.mgrOptions == 3) {
         addInventory();
-    } else if(res.mgrOptions === 4) {
+    } else if(res.mgrOptions == 4) {
         addNewProduct();
     } else {
         console.log('You Picked An Invalid Option');
@@ -96,10 +96,10 @@ var addInventory = function() {
     var addInvt = {
         properties: {
             inventoryID: {
-                description: colors.red('What is the ID number of the product you want to add invetory for?')
+                description: ('What is the ID number of the product you want to add invetory for?')
             },
             inventoryAmount: {
-                description: colors.red('How many items do you want to add to the inventory?')
+                description: ('How many items do you want to add to the inventory?')
             }
         },
     };
@@ -133,11 +133,11 @@ var addNewProduct = function() {
 
     var newProduct = {
         properties: {
-            newIdNumber: { description: colors.green("Please enter a unique 5-digit item ID#")},
-            newItemName: { description: colors.green("Please enter the name of the product you wish to add")},
-            newItemDepartment: { description: colors.green("What department does this item belong to?")},
-            newItemPrice: { description: colors.green("Please enter the price of the item in the following format '00.00'")},
-            newStockQuantity: { description: colors.green("Please enter a stock quantity for this item")},
+            newIdNumber: { description: ("Please enter a unique 5-digit item ID#")},
+            newItemName: { description: ("Please enter the name of the product you wish to add")},
+            newItemDepartment: { description: ("What department does this item belong to?")},
+            newItemPrice: { description: ("Please enter the price of the item in the following format '00.00'")},
+            newStockQuantity: { description: ("Please enter a stock quantity for this item")},
         }
     }
 
