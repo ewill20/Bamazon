@@ -5,10 +5,10 @@ CREATE DATABASE Bamazon;
 USE Bamazon;
 
 CREATE TABLE Products (
-ItemID INT NOT NULL AUTO_INCREMENT primary key NOT NULL,
+ItemID INT NOT NULL AUTO_INCREMENT,
 ProductName varchar(50) NOT NULL,
 DepartmentName varchar(50) NOT NULL,
-Price DECIMAL(6,2) NOT NULL,
+Price DECIMAL(8,2) NOT NULL,
 StockQuantity int NOT NULL);
 
 INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity) VALUES (
@@ -39,7 +39,7 @@ INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity)
 71.99,
 8);
 
-INSERT INTO Product (ItemID, ProductName, DepartmentName, Price, StockQuantity) VALUES (
+INSERT INTO Products (ItemID, ProductName, DepartmentName, Price, StockQuantity) VALUES (
 90210,
 'Apple Magic Mouse',
 'Electronics',
@@ -136,7 +136,7 @@ CREATE TABLE Departments (
 DepartmentId INT AUTO_INCREMENT,
 PRIMARY KEY(DepartmentId),
 DepartmentName varchar(50) NOT NULL,
-OverheadCosts DECIMAL(11,2) NOT NULL,
+OverHeadCosts DECIMAL(11,2) NOT NULL,
 TotalSales DECIMAL(11,2) NOT NULL);
 
 INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
@@ -205,7 +205,7 @@ INSERT INTO Departments (DepartmentName, OverheadCosts, TotalSales) VALUES (
 0);
 
 SHOW TABLES;
-CREATE VIEW bamazon.TotalProfits AS SELECT DepartmentId, DepartmentName, OverheadCosts, TotalSales, TotalSales-OverheadCosts AS TotalProfit FROM Departments;
+CREATE VIEW bamazon.TotalProfits AS SELECT DepartmentId, DepartmentName, OverHeadCosts, TotalSales, TotalSales-OverHeadCosts AS TotalProfit FROM Departments;
 
 
 

@@ -18,7 +18,7 @@ connection.connect();
 var executiveOptions = {
     properties: {
         eOptions: {
-            description: colors.yellow('Key in one of the following options: 1) View Product Sales by Department 2) Create New Department')
+            description: colors.red('Key in one of the following options: 1) View Product Sales by Department 2) Create New Department')
         },
     },
 };
@@ -76,10 +76,10 @@ var createDepartment = function () {
     var newDepartment = {
         properties: {
             newDeptName: {
-                description: colors.magenta('Please enter the name of the new department you would like to add.')
+                description: colors.blue('Please enter the name of the new department you would like to add.')
             },
             newOverhead: {
-                description: colors.magenta('What are the overhead costs for this department?')
+                description: colors.blue('What are the overhead costs for this department?')
             },
         }
     }
@@ -103,7 +103,7 @@ var createDepartment = function () {
                 connection.end();
             } else {
                 console.log('');
-                console.log(colors.blue.underline('New Department sucessfully created!'));
+                console.log(colors.yellow.underline('New Department sucessfully created!'));
                 console.log(' ');
                 connection.end();
             }

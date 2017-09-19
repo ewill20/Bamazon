@@ -44,8 +44,8 @@ var purchase = function(){
 	//creates the questions that will be prompted to the user
 	var productInfo = {
 		properties: {
-			itemID:{description: colors.blue('Please enter the ID # of the item you wish to purchase!')},
-			Quantity:{description: colors.green('How many items would you like to purchase?')}
+			itemID:{description: colors.red('Please enter the ID # of the item you wish to purchase!')},
+			Quantity:{description: colors.cyan('How many items would you like to purchase?')}
 		},
 	};
 
@@ -100,7 +100,7 @@ var purchase = function(){
 						// if(err) throw err;
 						// console.log('Problem ', err);
 						console.log('');
-						console.log(colors.cyan('Your order has been processed.  Thank you for shopping with us!'));
+						console.log(colors.blue('Your order has been processed.  Thank you for shopping with us!'));
 						console.log('');
 
 						connection.end();

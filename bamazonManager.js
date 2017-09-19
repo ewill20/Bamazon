@@ -20,7 +20,7 @@ connection.connect();
 var managerOptions = {
     properties: {
         mOptions: {
-            description: colors.blue('Key in one of the following options: 1) View Products for Sale 2) View Low Inventory 3) Add to Inventory 4) Add New Product')
+            description: colors.red('Key in one of the following options: 1) View Products for Sale 2) View Low Inventory 3) Add to Inventory 4) Add New Product')
         },
     },
 };
@@ -110,10 +110,10 @@ var addInventory = function () {
     var addInvt = {
         properties: {
             inventoryID: {
-                description: colors.green('What is the ID number of the product you want to add inventory for?')
+                description: colors.magenta('What is the ID number of the product you want to add inventory for?')
             },
             inventoryAmount: {
-                description: colors.green('How many items do you want to add to the inventory?')
+                description: colors.magenta('How many items do you want to add to the inventory?')
             }
         },
     };
@@ -154,11 +154,11 @@ var addNewProduct = function () {
     //creates the variable newProduct which contains the questions that are to be prompted to the user
     var newProduct = {
         properties: {
-            newIdNum: { description: colors.gray('Please enter a unique 5 digit item Id #') },
-            newItemName: { description: colors.gray('Please enter the name of the product you wish to add') },
-            newItemDepartment: { description: colors.gray('What department does this item belong in?') },
-            newItemPrice: { description: colors.gray('Please enter the price of the item in the format of 00.00') },
-            newStockQuantity: { description: colors.gray('Please enter a stock quantity for this item') },
+            newIdNum: { description: colors.yellow('Please enter a unique 5 digit item Id #') },
+            newItemName: { description: colors.yellow('Please enter the name of the product you wish to add') },
+            newItemDepartment: { description: colors.yellow('What department does this item belong in?') },
+            newItemPrice: { description: colors.yellow('Please enter the price of the item in the format of 00.00') },
+            newStockQuantity: { description: colors.yellow('Please enter a stock quantity for this item') },
         }
     }
 
