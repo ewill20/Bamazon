@@ -67,7 +67,7 @@ var viewProductSales = function () {
         console.log(table.toString());
         connection.end();
     })
-};
+}
 
 //creates the function to be run when the user selects option 2
 var createDepartment = function () {
