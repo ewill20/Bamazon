@@ -8,7 +8,7 @@ Customer Portal
 
 The customer portal allows a shopper to see the items for sale and quickly purchase them by entering the product ID for the item desired.
 
-https://github.com/ewill20/Bamazon/blob/master/Images/CustomerView.png
+/ewill20/Bamazon/raw/master/Images/CustomerView.png
 
 Manager Portal
 
